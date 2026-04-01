@@ -6,6 +6,28 @@
     <title>Server Time</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Current Server Time</h1>
+        <p id="time"></p>
+
+    </div>
+
+    <script>
+        const timeElement = document.getElementById("time");
+
+        function updateTime() {
+            const now = new Date();
+            timeElement.textContent = "Philippine Time: " + now.toLocaleString("en-PH", {
+            timeZone: "Asia/Manila",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+        });
+        }
+
+        updateTime();
+
+        setInterval(updateTime, 1000);
+    </script>
 </body>
 </html>
